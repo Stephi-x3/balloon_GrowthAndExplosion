@@ -30,7 +30,6 @@ header p{
 main{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     height: 100vh;
 }
@@ -45,23 +44,8 @@ main{
 }
 
 #gameObject{
-    --startSize: 50px;
-    --newSize: 50px; 
-    font-size: var(--newSize);
-    align-items: center;
-}
-
-@keyframes changeFont {
-    from {
-      font-size: var(--startSize);
-    }
-    to {
-      font-size: var(--newSize);
-    }
-  }
-
-.animated-text {
-    animation: changeFont 2s linear;
+    --startSize: 50px; 
+    font-size: var(--startSize);
 }
 
 footer{
