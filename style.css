@@ -61,7 +61,7 @@ main{
   }
 
 .animated-text {
-    animation: changeFont 2s ease-in-out;
+    animation: changeFont .5s linear;
 }
 
 footer{

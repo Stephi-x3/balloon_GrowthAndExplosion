@@ -1,11 +1,11 @@
 function changeBalloonSize(KeyboardEvent) {
     if (KeyboardEvent.code=='ArrowUp' || KeyboardEvent.code=='ArrowDown') {
         const balloon = document.getElementById('gameObject');
-        const currentSize = parseFloat(getComputedStyle(balloon).getPropertyValue('font-size'));
+        const currentSize = parseFloat(getComputedStyle(balloon).getPropertyValue('--startSize'));
         let newSize = 0;
 
         if(KeyboardEvent.code=='ArrowUp'){
-            newSize = currentSize + 25;
+            newSize = currentSize + 50;
            
             if (newSize>=400) {
                balloon.textContent = '💥';
@@ -13,31 +13,31 @@ function changeBalloonSize(KeyboardEvent) {
                document.removeEventListener("keydown", changeBalloonSize);
                return;
             }
-            /*balloon.style.fontSize = newSize+'px';*/
-            balloon.style.setProperty('--newSize', newSize+'px'); 
+            balloon.style.setProperty('--newSize', newSize+'px');
+            
+            //animation
+            balloon.classList.add("animated-text");
 
         }else if(KeyboardEvent.code=='ArrowDown'){
-            newSize = currentSize - 25;
+            newSize = currentSize - 50;
             
             if (newSize<50) {
                 return;
              }
-            /*balloon.style.fontSize = newSize+'px';*/
             balloon.style.setProperty('--newSize', newSize+'px');
+            
+            //animation
+            balloon.classList.add("animated-text");
         }
+
+        balloon.addEventListener("animationend", () =>  {
+            balloon.classList.remove("animated-text");
+            balloon.style.setProperty('--startSize', newSize+'px');
+        });
     }
 };
 
-document.addEventListener("keydown", changeBalloonSize);   
-    
-/*
-    // CSS-Klasse "animated-text" hinzufügen, um die Animation zu aktivieren
-    balloon.classList.add("animated-text");
-
-    // Nach Abschluss der Animation CSS-Klasse entfernen
-    balloon.addEventListener("animationend", function() {
-    balloon.classList.remove("animated-text");
-    });*/
+document.addEventListener("keydown", changeBalloonSize);
 
 
 
