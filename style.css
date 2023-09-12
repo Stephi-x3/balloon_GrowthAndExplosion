@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(to bottom,
+     rgb(8, 115, 129),
+     rgb(0, 174, 255),
+     rgb(122, 204, 230),
+     rgb(207, 235, 243));
+    height: 100vh;
+    text-align: center;
+}
+
+header{
+    color:rgb(255, 255, 255);
+    padding: 50px 10px 50px 10px;
+    position: fixed;
+    width: 100%;
+}
+
+header h1{
+    font-size: 2em;
+}
+header p{
+    font-size: 1.5em;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameObject{
+    font-size: 5em;
+    align-items: center;
+}
