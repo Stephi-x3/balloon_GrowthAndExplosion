@@ -53,10 +53,10 @@ main{
 
 @keyframes changeFont {
     from {
-      font-size: var(--startSize); /* startSize */
+      font-size: var(--startSize);
     }
     to {
-      font-size: var(--newSize); /* endSize */
+      font-size: var(--newSize);
     }
   }
 

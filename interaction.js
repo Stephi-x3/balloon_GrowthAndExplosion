@@ -6,12 +6,12 @@ function changeBalloonSize(KeyboardEvent) {
 
         if(KeyboardEvent.code=='ArrowUp'){
             newSize = currentSize + 25;
-            
+           
             if (newSize>=400) {
                balloon.textContent = '💥';
                document.getElementById('gameOver').style.display = 'block';
                document.removeEventListener("keydown", changeBalloonSize);
-               
+               return;
             }
             balloon.style.fontSize = newSize+'px';
 
