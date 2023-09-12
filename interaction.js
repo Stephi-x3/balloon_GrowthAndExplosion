@@ -1,4 +1,4 @@
-document.addEventListener("keydown", KeyboardEvent => {
+function changeBalloonSize(KeyboardEvent) {
     if (KeyboardEvent.code=='ArrowUp' || KeyboardEvent.code=='ArrowDown') {
         const balloon = document.getElementById('gameObject');
         const currentSize = parseFloat(getComputedStyle(balloon).getPropertyValue('font-size'));
@@ -10,6 +10,8 @@ document.addEventListener("keydown", KeyboardEvent => {
             if (newSize>=400) {
                balloon.textContent = '💥';
                document.getElementById('gameOver').style.display = 'block';
+               document.removeEventListener("keydown", changeBalloonSize);
+               
             }
             balloon.style.fontSize = newSize+'px';
 
@@ -22,7 +24,9 @@ document.addEventListener("keydown", KeyboardEvent => {
             balloon.style.fontSize = newSize+'px';
         }
     }
-    
+};
+
+document.addEventListener("keydown", changeBalloonSize);   
     
 /*
     // CSS-Klasse "animated-text" hinzufügen, um die Animation zu aktivieren
@@ -32,5 +36,6 @@ document.addEventListener("keydown", KeyboardEvent => {
     balloon.addEventListener("animationend", function() {
     balloon.classList.remove("animated-text");
     });*/
-});
+
+
 
