@@ -13,7 +13,8 @@ function changeBalloonSize(KeyboardEvent) {
                document.removeEventListener("keydown", changeBalloonSize);
                return;
             }
-            balloon.style.fontSize = newSize+'px';
+            /*balloon.style.fontSize = newSize+'px';*/
+            balloon.style.setProperty('--newSize', newSize+'px'); 
 
         }else if(KeyboardEvent.code=='ArrowDown'){
             newSize = currentSize - 25;
@@ -21,7 +22,8 @@ function changeBalloonSize(KeyboardEvent) {
             if (newSize<50) {
                 return;
              }
-            balloon.style.fontSize = newSize+'px';
+            /*balloon.style.fontSize = newSize+'px';*/
+            balloon.style.setProperty('--newSize', newSize+'px');
         }
     }
 };

@@ -35,20 +35,20 @@ main{
     height: 100vh;
 }
 
-#gameObject{
-    font-size: 50px;
-    align-items: center;
-}
-
 #gameOver{
     display: none;
     color: rgb(252, 213, 63);
     background-color: rgb(248, 49, 47);
+    font-size: 1.5em;
+    padding: 10px 50px;
+    border-radius: 10px;
+}
+
+#gameObject{
     --startSize: 50px;
     --newSize: 50px; 
     font-size: var(--newSize);
-    padding: 10px 50px;
-    border-radius: 10px;
+    align-items: center;
 }
 
 @keyframes changeFont {
