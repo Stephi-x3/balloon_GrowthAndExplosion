@@ -34,6 +34,11 @@ main{
     height: 100vh;
 }
 
+#gameObject{
+    --startSize: 50px; 
+    font-size: var(--startSize);
+}
+
 #gameOver{
     display: none;
     color: rgb(252, 213, 63);
@@ -41,11 +46,7 @@ main{
     font-size: 1.5em;
     padding: 10px 50px;
     border-radius: 10px;
-}
-
-#gameObject{
-    --startSize: 50px; 
-    font-size: var(--startSize);
+    align-self: center;
 }
 
 footer{
